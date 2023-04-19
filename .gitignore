@@ -1,0 +1,4 @@
+/nbproject/
+/app/config/config-local.php
+Thumbs.db
+/app/logs/*.php

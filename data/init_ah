@@ -1,0 +1,100 @@
+  `site_name` varchar(55) NOT NULL,
+  `tel` varchar(20) NOT NULL,
+  `dateformat` varchar(20) DEFAULT NULL,
+  `timeformat` varchar(20) DEFAULT NULL,
+  `default_email` varchar(100) NOT NULL,
+  `language` varchar(20) NOT NULL,
+  `version` varchar(5) NOT NULL DEFAULT '1.0',
+  `theme` varchar(20) NOT NULL,
+  `timezone` varchar(255) NOT NULL DEFAULT '0',
+  `protocol` varchar(20) NOT NULL DEFAULT 'mail',
+  `smtp_host` varchar(255) DEFAULT NULL,
+  `smtp_user` varchar(100) DEFAULT NULL,
+  `smtp_pass` varchar(255) DEFAULT NULL,
+  `smtp_port` varchar(10) DEFAULT '25',
+  `smtp_crypto` varchar(5) DEFAULT NULL,
+  `mmode` tinyint(1) NOT NULL,
+  `captcha` tinyint(1) NOT NULL DEFAULT 1,
+  `mailpath` varchar(55) DEFAULT NULL,
+  `currency_prefix` varchar(3) NOT NULL,
+  `default_customer` int(11) NOT NULL,
+  `default_tax_rate` varchar(20) NOT NULL,
+  `rows_per_page` int(2) NOT NULL,
+  `total_rows` int(2) NOT NULL,
+  `header` varchar(1000) NOT NULL,
+  `footer` varchar(1000) NOT NULL,
+  `bsty` tinyint(4) NOT NULL,
+  `display_kb` tinyint(4) NOT NULL,
+  `default_category` int(11) NOT NULL,
+  `default_discount` varchar(20) NOT NULL,
+  `item_addition` tinyint(1) NOT NULL,
+  `barcode_symbology` varchar(55) NOT NULL,
+  `pro_limit` tinyint(4) NOT NULL,
+  `decimals` tinyint(1) NOT NULL DEFAULT 2,
+  `thousands_sep` varchar(2) NOT NULL DEFAULT ',',
+  `decimals_sep` varchar(2) NOT NULL DEFAULT '.',
+  `focus_add_item` varchar(55) DEFAULT NULL,
+  `add_customer` varchar(55) DEFAULT NULL,
+  `toggle_category_slider` varchar(55) DEFAULT NULL,
+  `cancel_sale` varchar(55) DEFAULT NULL,
+  `suspend_sale` varchar(55) DEFAULT NULL,
+  `print_order` varchar(55) DEFAULT NULL,
+  `print_bill` varchar(55) DEFAULT NULL,
+  `finalize_sale` varchar(55) DEFAULT NULL,
+  `today_sale` varchar(55) DEFAULT NULL,
+  `open_hold_bills` varchar(55) DEFAULT NULL,
+  `close_register` varchar(55) DEFAULT NULL,
+  `java_applet` tinyint(1) NOT NULL,
+  `receipt_printer` varchar(55) DEFAULT NULL,
+  `pos_printers` varchar(255) DEFAULT NULL,
+  `cash_drawer_codes` varchar(55) DEFAULT NULL,
+  `char_per_line` tinyint(4) DEFAULT 42,
+  `rounding` tinyint(1) DEFAULT 0,
+  `pin_code` varchar(20) DEFAULT NULL,
+  `stripe` tinyint(1) DEFAULT NULL,
+  `stripe_secret_key` varchar(100) DEFAULT NULL,
+  `stripe_publishable_key` varchar(100) DEFAULT NULL,
+  `purchase_code` varchar(100) DEFAULT NULL,
+  `envato_username` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`setting_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_settings`
+--
+
+LOCK TABLES `tec_settings` WRITE;
+/*!40000 ALTER TABLE `tec_settings` DISABLE KEYS */;
+INSERT INTO `tec_settings` VALUES (1,'logo11.png','BELA PLUS PDV','11989236181','d/m/yy','h:i A','loja190@gmail.com','portugues','4.0','default','Amercia/Belem','mail','pop.gmail.com','loja190@gmail.com','','25','',0,0,NULL,'R$ ',1,'0%',25,30,'<h2>100% TOP</h2>Shopping Porto Loja 01<br>Rua Tiers 282, Brás São Paulo SP','TROCA SOMENTE COM DEFEITO DE FABRICA<br>E COM CUPOM FISCAL DA COMPRA<br>',3,0,3,'0',1,'ean13',100,2,',','.','F7','F1','ALT+F10','F3','F2','F6','F4','F10','Ctrl+F1','F5','ALT+F7',0,'','','',42,0,'1020304050',0,'sk_test_jHf4cEzAYtgcXvgWPCsQAn50','pk_test_beat8SWPORb0OVdF2H77A7uG','ff2400d9-f3aa-4db5-9dc5-4eee236c6254','Bela Plus oriente');
+/*!40000 ALTER TABLE `tec_settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_suppliers`
+--
+
+DROP TABLE IF EXISTS `tec_suppliers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_suppliers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(55) NOT NULL,
+  `cf1` varchar(255) NOT NULL,
+  `cf2` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_suppliers`
+--
+
+LOCK TABLES `tec_suppliers` WRITE;
+/*!40000 ALTER TABLE `tec_suppliers` DISABLE KEYS */;
+INSERT INTO `tec_suppliers` VALUES (2,'thiago','03184809307','','8899874257','thiagoeps@gmail.com');
+/*!40000 ALTER TABLE `tec_suppliers` ENABLE KEYS */;
+UNLOCK TABLES;
+

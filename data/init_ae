@@ -1,0 +1,100 @@
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_products_variants` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produto` int(11) NOT NULL,
+  `size` varchar(45) NOT NULL,
+  `color` varchar(45) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `var_id_produto` (`id_produto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_products_variants`
+--
+
+LOCK TABLES `tec_products_variants` WRITE;
+/*!40000 ALTER TABLE `tec_products_variants` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tec_products_variants` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_purchase_items`
+--
+
+DROP TABLE IF EXISTS `tec_purchase_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_purchase_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `purchase_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` decimal(15,2) NOT NULL,
+  `cost` decimal(25,2) NOT NULL,
+  `subtotal` decimal(25,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_purchase_items`
+--
+
+LOCK TABLES `tec_purchase_items` WRITE;
+/*!40000 ALTER TABLE `tec_purchase_items` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tec_purchase_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_purchases`
+--
+
+DROP TABLE IF EXISTS `tec_purchases`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_purchases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reference` varchar(55) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `note` varchar(1000) NOT NULL,
+  `total` decimal(25,2) NOT NULL,
+  `attachment` varchar(255) DEFAULT NULL,
+  `supplier_id` int(11) DEFAULT NULL,
+  `received` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_purchases`
+--
+
+LOCK TABLES `tec_purchases` WRITE;
+/*!40000 ALTER TABLE `tec_purchases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tec_purchases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_registers`
+--
+
+DROP TABLE IF EXISTS `tec_registers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_registers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_id` int(11) NOT NULL,
+  `cash_in_hand` decimal(25,2) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `total_cash` decimal(25,2) DEFAULT NULL,
+  `total_cheques` int(11) DEFAULT NULL,
+  `total_cc_slips` int(11) DEFAULT NULL,
+  `total_cash_submitted` decimal(25,2) DEFAULT NULL,
+  `total_cheques_submitted` int(11) DEFAULT NULL,
+  `total_cc_slips_submitted` int(11) DEFAULT NULL,
+  `note` text DEFAULT NULL,
+  `closed_at` timestamp NULL DEFAULT NULL,
+  `transfer_opened_bills` varchar(50) DEFAULT NULL,

@@ -1,0 +1,100 @@
+-- MySQL dump 10.19  Distrib 10.3.37-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: belaplus_pdv_01
+-- ------------------------------------------------------
+-- Server version	10.3.37-MariaDB-0ubuntu0.20.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET N2021-07-15 11:55:47',1),(872,'PALOMAAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tec_cards_tax`
+--
+USE belaplus_pdv_oriente;
+
+DROP TABLE IF EXISTS `tec_cards_tax`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_cards_tax` (
+  `id` int(11) NOT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `tax_client` decimal(4,2) DEFAULT NULL,
+  `tax_real` decimal(4,2) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_cards_tax`
+--
+
+LOCK TABLES `tec_cards_tax` WRITE;
+/*!40000 ALTER TABLE `tec_cards_tax` DISABLE KEYS */;
+INSERT INTO `tec_cards_tax` VALUES (1,'debit',2.00,1.35,'2021-03-04 10:19:54','2022-04-16 20:36:14'),(2,'credit',4.00,4.27,'2021-03-04 10:19:54','2022-04-16 20:36:14'),(3,'credit_2x',5.00,5.11,'2021-03-04 10:19:54','2022-04-16 20:36:14'),(4,'credit_3x',6.00,5.71,'2021-03-04 10:19:54','2022-04-16 20:36:14'),(5,'credit_4x',7.00,6.32,'2021-03-04 10:19:54','2022-04-16 20:36:14'),(6,'credit_5x',8.00,6.93,'2021-03-04 10:19:54','2022-04-16 20:36:15'),(7,'credit_6x',9.00,7.55,'2021-03-04 10:19:54','2022-04-16 20:36:15');
+/*!40000 ALTER TABLE `tec_cards_tax` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_categories`
+--
+
+DROP TABLE IF EXISTS `tec_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(20) NOT NULL,
+  `name` varchar(55) NOT NULL,
+  `image` varchar(100) DEFAULT 'no_image.png',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_categories`
+--
+
+LOCK TABLES `tec_categories` WRITE;
+/*!40000 ALTER TABLE `tec_categories` DISABLE KEYS */;
+INSERT INTO `tec_categories` VALUES (1,'02','CALÇA','bdbc68aa9847d3dad074112ca58a3d42.jpg'),(2,'03','VESTIDO','e3c45122fa6a568f0a5a1e24f0c03968.jpg'),(3,'01','BLUSA ','no_image.png'),(6,'04','SHORTS','no_image.png'),(7,'05','MACACAO','no_image.png'),(8,'06 ','MACAQUINHO','no_image.png'),(9,'07','SAIA','no_image.png'),(10,'08','CONJUNTO ','no_image.png'),(11,'09 ','LA','no_image.png'),(12,'10','COLETE ','no_image.png'),(13,'11','JAQUETA','no_image.png'),(14,'12','CROPPED','no_image.png'),(15,'13','MOLETON','no_image.png');
+/*!40000 ALTER TABLE `tec_categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_combo_items`
+--
+
+DROP TABLE IF EXISTS `tec_combo_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_combo_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `item_code` varchar(20) NOT NULL,
+  `quantity` decimal(12,4) NOT NULL,
+  `price` decimal(25,2) DEFAULT NULL,
+  `cost` decimal(25,2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_combo_items`
+--
+
+LOCK TABLES `tec_combo_items` WRITE;
+/*!40000 ALTER TABLE `tec_combo_items` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tec_combo_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--

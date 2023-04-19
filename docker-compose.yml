@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+      - "9002:9002"
+    volumes:
+      - ./infra/etc/nginx/sites-enabled/default:/etc/nginx/sites-enabled/default
+      - ./infra/etc/php/7.0/fpm/pool.d/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
+      - ./infra/fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
+      - .:/var/www/html/pdv_local
+      - /var/run/php:/var/run/php
+    depends_on:
+      - mysql
+    networks:
+    - app-network
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./infra/etc/nginx/sites-enabled/default:/etc/nginx/conf.d/default.conf
+      - ./infra/fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
+    depends_on:
+      - web
+    networks:
+      - app-network
+
+  mysql:
+    image: mariadb
+    command: --max_allowed_packet=900M
+    container_name: bela-db
+    environment:
+      MYSQL_DATABASE: belaplus_pdv_oriente
+      MYSQL_ROOT_PASSWORD: GCsDEWPTXdCskabv
+      MYSQL_PASSWORD: GCsDEWPTXdCskabv
+      # SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./data:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - mysql
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - "8888:80"
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge

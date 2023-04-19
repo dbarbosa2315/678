@@ -1,0 +1,1 @@
+INSERT INTO tec_groups (name, description) VALUES('cancela-venda', 'Cancela Venda')

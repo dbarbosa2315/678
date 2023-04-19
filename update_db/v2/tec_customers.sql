@@ -1,0 +1,2 @@
+ALTER TABLE `tec_customers` ADD COLUMN `seller_id` INT NOT NULL;
+ALTER TABLE `tec_customers` ADD COLUMN `createdAt` DATETIME DEFAULT CURRENT_TIMESTAMP;

@@ -1,0 +1,100 @@
+--
+-- Table structure for table `tec_suspended_items`
+--
+
+DROP TABLE IF EXISTS `tec_suspended_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_suspended_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `suspend_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `variant_id` int(11) DEFAULT NULL,
+  `quantity` decimal(15,2) NOT NULL,
+  `unit_price` decimal(25,2) NOT NULL,
+  `net_unit_price` decimal(25,2) NOT NULL,
+  `discount` varchar(20) DEFAULT NULL,
+  `item_discount` decimal(25,2) DEFAULT NULL,
+  `tax` int(20) DEFAULT NULL,
+  `item_tax` decimal(25,2) DEFAULT NULL,
+  `subtotal` decimal(25,2) NOT NULL,
+  `real_unit_price` decimal(25,2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_suspended_items`
+--
+
+LOCK TABLES `tec_suspended_items` WRITE;
+/*!40000 ALTER TABLE `tec_suspended_items` DISABLE KEYS */;
+INSERT INTO `tec_suspended_items` VALUES (1,1,6,NULL,1.00,2.00,2.00,'0',0.00,0,0.00,2.00,2.00),(2,1,15,NULL,1.00,2.00,2.00,'0',0.00,0,0.00,2.00,2.00),(3,1,16,NULL,1.00,2.00,2.00,'0',0.00,0,0.00,2.00,2.00),(4,2,15,NULL,3.00,2.00,2.00,'0',0.00,0,0.00,6.00,2.00),(5,2,16,NULL,1.00,2.00,2.00,'0',0.00,0,0.00,2.00,2.00);
+/*!40000 ALTER TABLE `tec_suspended_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_suspended_sales`
+--
+
+DROP TABLE IF EXISTS `tec_suspended_sales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_suspended_sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `customer_name` varchar(55) NOT NULL,
+  `seller_id` int(11) NOT NULL,
+  `total` decimal(25,2) NOT NULL,
+  `product_discount` decimal(25,2) DEFAULT NULL,
+  `order_discount_id` varchar(20) DEFAULT NULL,
+  `order_discount` decimal(25,2) DEFAULT NULL,
+  `total_discount` decimal(25,2) DEFAULT NULL,
+  `product_tax` decimal(25,2) DEFAULT NULL,
+  `order_tax_id` varchar(20) DEFAULT NULL,
+  `order_tax` decimal(25,2) DEFAULT NULL,
+  `total_tax` decimal(25,2) DEFAULT NULL,
+  `grand_total` decimal(25,2) NOT NULL,
+  `total_items` int(11) DEFAULT NULL,
+  `total_quantity` int(11) NOT NULL,
+  `paid` decimal(25,2) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `note` varchar(1000) DEFAULT NULL,
+  `hold_ref` varchar(255) DEFAULT NULL,
+  `total_cash` decimal(25,2) NOT NULL DEFAULT 0.00,
+  `total_credit` decimal(25,2) NOT NULL DEFAULT 0.00,
+  `total_debit` decimal(25,2) NOT NULL DEFAULT 0.00,
+  `total_transfer` decimal(25,2) NOT NULL DEFAULT 0.00,
+  `instalments_credit` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tec_suspended_sales`
+--
+
+LOCK TABLES `tec_suspended_sales` WRITE;
+/*!40000 ALTER TABLE `tec_suspended_sales` DISABLE KEYS */;
+INSERT INTO `tec_suspended_sales` VALUES (1,'2016-03-08 16:37:01',1,'Cliente Padr?o',0,6.00,0.00,NULL,0.00,0.00,0.00,'0%',0.00,0.00,6.00,3,3,0.00,3,NULL,NULL,'','01',0.00,0.00,0.00,0.00,0);
+/*!40000 ALTER TABLE `tec_suspended_sales` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tec_user_logins`
+--
+
+DROP TABLE IF EXISTS `tec_user_logins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tec_user_logins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) DEFAULT NULL,
+  `ip_address` varbinary(16) NOT NULL,
+  `login` varchar(100) NOT NULL,
+  `time` timestamp NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)

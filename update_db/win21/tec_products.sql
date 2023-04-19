@@ -1,0 +1,1 @@
+ALTER TABLE `tec_products` ADD COLUMN `description` VARCHAR(255) DEFAULT '';

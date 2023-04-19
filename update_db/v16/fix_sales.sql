@@ -1,0 +1,1 @@
+UPDATE tec_sales SET sync_time=0 WHERE date > '2021-04-30 00:00';
