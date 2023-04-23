@@ -1,6 +1,6 @@
 # Projeto BELA PLUS
 
-[![Docker]([https://raw.githubusercontent.com/jmnote/z-icons/master/svg/docker.svg](https://alisonjuliano.com/wp-content/uploads/2021/10/docker-nginx-php-laravel-mysql-1024x427.png))](https://raw.githubusercontent.com)
+[![Docker]([https://raw.githubusercontent.com/jmnote/z-icons/master/svg/docker.svg](https://alisonjuliano.com/wp-content/uploads/2021/10/docker-nginx-php-laravel-mysql-1024x427.png))]
 
 Este projeto utiliza Docker para criar um ambiente de desenvolvimento com Nginx, MySQL e PHPMyAdmin. A aplicação principal é acessível através de `localhost` na porta 8080, enquanto o PHPMyAdmin pode ser acessado na porta 8888.
 
