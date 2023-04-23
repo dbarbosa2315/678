@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Projeto BELA PLUS
 
 [![Docker](https://raw.githubusercontent.com/jmnote/z-icons/master/svg/docker.svg)](https://www.docker.com/)
 
@@ -14,6 +14,13 @@ Para executar este projeto, você precisará instalar o [Docker](https://www.doc
 https://github.com/uesleisales/ecommerce-pdv-test
 
 2. Navegue até a pasta raiz do projeto.
+
+3. Verifique se a pasta mysql-data está previante criada na raiz do projeto. Essa pasta irá armazenar os dados do banco local configurado no Docker.
+
+4. Verifique se as seguintes pastas estão criadas e configuradas no projeto
+[![Print](https://raw.githubusercontent.com/uesleisales/ecommerce-pdv-test/main/image.png
+)](https://www.github.com/)
+
 
 3. Execute o Docker Compose:
 docker-compose up -d
