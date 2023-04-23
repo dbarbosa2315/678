@@ -1,8 +1,26 @@
-### Setup mariadb ###
+# Nome do Projeto
 
-mysql_secure_installation
+[![Docker](https://raw.githubusercontent.com/jmnote/z-icons/master/svg/docker.svg)](https://www.docker.com/)
 
-service mariadb restart
+Este projeto utiliza Docker para criar um ambiente de desenvolvimento com Nginx, MySQL e PHPMyAdmin. A aplicação principal é acessível através de `localhost` na porta 8080, enquanto o PHPMyAdmin pode ser acessado na porta 8888.
 
-UPDATE mysql.user SET plugin = 'mysql_native_password', authentication_string = PASSWORD('GCsDEWPTXdCskabv') WHERE User = 'root';
-FLUSH PRIVILEGES;
+## Pré-requisitos
+
+Para executar este projeto, você precisará instalar o [Docker](https://www.docker.com/) e o [Docker Compose](https://docs.docker.com/compose/).
+
+## Executando a aplicação
+
+1. Clone este repositório:
+https://github.com/uesleisales/ecommerce-pdv-test
+
+2. Navegue até a pasta raiz do projeto.
+
+3. Execute o Docker Compose:
+docker-compose up -d
+
+Agora a aplicação principal estará disponível em [http://localhost:8080](http://localhost:8080) e o PHPMyAdmin em [http://localhost:8888](http://localhost:8888).
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE.md](LICENSE.md) para obter detalhes.
+
