@@ -46,6 +46,9 @@ CREATE TABLE `tec_product_balance` (
   `quantity` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
+2. Criei uma nova tela para cadastro do balanço e um link no menu para essa tela.
+[![Print](./printbalanco.png
+)](https://www.github.com/)
 
 ## Licença
 
