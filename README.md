@@ -10,7 +10,7 @@ Para simular e rodar o projeto original disponilizado, foram neessárias algumas
 
 2. Criei uma pasta chamada nginx em infra/etc e dentro dessa pasta criei dois subdiretórios: sites-enabled e snippets. Dentro dessas pastas, fiz as configurações necessárias para que o servidor pudesse funcionar e adicionei a configuração do módulo fpm para que os arquivos PHP pudessem ser excutados ao invés de serem baixados.
 
-3. Fiz as configurações e liberei as portas dos containers no arquivo docker-compose.yml.
+3. Fiz as configurações e liberei as portas dos containers no arquivo [docker-compose](./docker-compose.yml)
 
 ## Pré-requisitos
 
@@ -34,6 +34,18 @@ https://github.com/uesleisales/ecommerce-pdv-test
 docker-compose up -d
 
 Agora a aplicação principal estará disponível em [http://localhost:8080](http://localhost:8080) e o PHPMyAdmin em [http://localhost:8888](http://localhost:8888).
+
+
+## Nova funcionalidade de balano.
+
+1. Criei um nova tabela no banco de dados com o seguinte script SQL:
+```
+CREATE TABLE `tec_product_balance` (
+  `id` int(11) NOT NULL,
+  `product_code` varchar(150) NOT NULL,
+  `quantity` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
 
 ## Licença
 
