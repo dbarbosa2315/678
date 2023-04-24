@@ -38,7 +38,7 @@ Agora a aplicação principal estará disponível em [http://localhost:8080](htt
 
 ## Nova funcionalidade de balano.
 
-1. Criei um nova tabela no banco de dados com o seguinte script SQL:
+1. Foi criada um nova tabela no banco de dados com o seguinte script SQL:
 ```
 CREATE TABLE `tec_product_balance` (
   `id` int(11) NOT NULL,
@@ -46,8 +46,14 @@ CREATE TABLE `tec_product_balance` (
   `quantity` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
-2. Criei uma nova tela para cadastro do balanço e um link no menu para essa tela.
+2. Foi criada uma nova tela para cadastro do balanço e um link no menu para essa tela.
+
 [![Print](./printbalanco.png
+)](https://www.github.com/)
+
+3. Foi adicionada uma nova coluna na tela de Lista de produtos. Essa coluna exibe a quantidade cadastrada no balanço. Caso ainda não tenha sido cadastrada uma quantidade previamente, é exibida a quantidade atual do produto.
+
+[![Print](./productbalance.png
 )](https://www.github.com/)
 
 ## Licença
