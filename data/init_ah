@@ -66,7 +66,7 @@
 
 LOCK TABLES `tec_settings` WRITE;
 /*!40000 ALTER TABLE `tec_settings` DISABLE KEYS */;
-INSERT INTO `tec_settings` VALUES (1,'logo11.png','BELA PLUS PDV','11989236181','d/m/yy','h:i A','loja190@gmail.com','portugues','4.0','default','Amercia/Belem','mail','pop.gmail.com','loja190@gmail.com','','25','',0,0,NULL,'R$ ',1,'0%',25,30,'<h2>100% TOP</h2>Shopping Porto Loja 01<br>Rua Tiers 282, Brás São Paulo SP','TROCA SOMENTE COM DEFEITO DE FABRICA<br>E COM CUPOM FISCAL DA COMPRA<br>',3,0,3,'0',1,'ean13',100,2,',','.','F7','F1','ALT+F10','F3','F2','F6','F4','F10','Ctrl+F1','F5','ALT+F7',0,'','','',42,0,'1020304050',0,'sk_test_jHf4cEzAYtgcXvgWPCsQAn50','pk_test_beat8SWPORb0OVdF2H77A7uG','ff2400d9-f3aa-4db5-9dc5-4eee236c6254','Bela Plus oriente');
+INSERT INTO `tec_settings` VALUES (1,'logo11.png','BELA PLUS PDV','11989236181','d/m/yy','h:i A','loja190@gmail.com','portugues','4.0','default','Amercia/Belem','mail','pop.gmail.com','loja190@gmail.com','','25','',0,0,NULL,'R$ ',1,'0%',25,30,'<h2>100% TOP</h2>Shopping Porto Loja 01<br>Rua Tiers 282, Brás São Paulo SP','TROCA SOMENTE COM DEFEITO DE FABRICA<br>E COM CUPOM FISCAL DA COMPRA<br>',3,0,3,'0',1,'ean13',100,2,',','.','F7','F1','ALT+F10','F3','F2','F6','F4','F10','Ctrl+F1','F5','ALT+F7',0,'','','',42,0,'1020304050',0,'sk_test_','pk_test_','ff2400d9-f3aa-4db5-9dc5-4eee236c6254','Bela Plus oriente');
 /*!40000 ALTER TABLE `tec_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
